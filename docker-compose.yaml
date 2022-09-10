@@ -1,0 +1,11 @@
+version: "3.9"
+
+services:
+
+  godaddns:
+    build: .
+    restart: always
+    network_mode: host
+    command: --key <key> --secret <secret> --domain example.com --subdomain www
+    volumes:
+      - /etc/localtime:/etc/localtime
